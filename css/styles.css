@@ -1,0 +1,18 @@
+h1 {
+    color: red !important;
+    width: 90%;
+
+}
+
+#headerText {
+    color: blue !important;
+}
+
+.subText {
+    border: 1px solid aquamarine;
+}
+
+#backgroundImage {
+    width: 100%;
+    height: auto;
+}
