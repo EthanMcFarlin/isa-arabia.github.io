@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update primate image location
         let primatePhoto = document.getElementById("primatePhoto");
-        let percentageMultiplier = 25 + percentageScrolled;
+        let percentageMultiplier = 35 + percentageScrolled;
         let amount = 'translateX(-' + percentageMultiplier + '%)'
         primatePhoto.style.transform = amount;
 

@@ -81,27 +81,27 @@ body {
 
 
 #overlayTextHolder {
-    margin-left: 1vw;
+    margin-left: 3vw;
 }
 
 #overlayTextHolder > #overlayText {
     position: absolute;
-    bottom: -2vw;
+    bottom: -0.5vw;
 }
 
 #overlayTextHolder > #topText {
     position: absolute;
-    bottom: 15vw;
+    bottom: 16.5vw;
 }
 
 #topText.top-minimized {
     font-size: 15vw;
-    bottom: 10vw !important;
+    bottom: 11.5vw !important;
 }
 
 #overlayText.overlay-minimized {
     font-size: 15vw;
-    bottom: -2vw !important;
+    bottom: -0.5vw !important;
 }
 
 
@@ -116,11 +116,11 @@ body {
 
 #leftPanel {
     background: #090D1E;
-    width: 45vw; /* Updated width to 40% of viewport width */
+    width: 48vw; /* Updated width to 40% of viewport width */
     height: 100vh;
     position: fixed; /* Fixed to viewport */
     top: 0;
-    right: -45vw; /* Start off-screen on the right */
+    right: -48vw; /* Start off-screen on the right */
     transition: right 0.5s ease; /* Smooth transition */
 }
 
@@ -148,8 +148,8 @@ body {
     flex: 1; /* Make each list item take up equal space */
     font-family: Montserrat;
     font-weight: 200;
-    font-size: 17pt;
-    padding: 5px;
+    font-size: 16pt;
+    padding: 10px;
 }
 
 .nav-bar li a {
@@ -168,7 +168,7 @@ body {
     color: #8C7BE2;
     font-weight: 800;
     font-size: 30pt;
-    transform:translateY(-11px);
+    transform:translateY(-14px);
 }
 
 /*
@@ -194,12 +194,12 @@ body {
 #c2aText > h1 {
     color: #F6F2E0;
     font-weight: 700;
-    font-size: 52pt;
+    font-size: 48pt;
 }
 
 #c2aText > p {
     color: #EBE5ED;
-    font-size: 27pt;
+    font-size: 24pt;
     font-weight: 400;
 
 }
@@ -214,7 +214,7 @@ body {
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .image-container img {
         transform: translateX(-20%);
     }
