@@ -1,18 +1,265 @@
-h1 {
-    color: red !important;
-    width: 90%;
+/*
+====================================================
+
+    General Styles
+
+====================================================
+ */
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#contentWrapper {
+    height: 100vh; /* Same height as viewport */
+    width: 100vw; /* Same width as viewport */
+    overflow: hidden; /* No scrolling inside the wrapper */
+    position: fixed; /* Fixed positioned to prevent natural scrolling */
+}
+
+/*
+====================================================
+
+    Hero Image
+
+====================================================
+ */
+
+#homeHero {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/*
+====================================================
+
+    Hero Text
+
+====================================================
+ */
+
+/*#textHolder {*/
+/*    position: absolute;*/
+/*    bottom: 2vw !important;*/
+/*    padding: 0px;*/
+/*    left: 0;*/
+/*    padding-left: 40px;*/
+/*}*/
+
+.headerText {
+    font-family: "Arial Black";
+    font-weight: 800;
+    font-size: 20vw;
+    color: #fff;
+    mix-blend-mode: difference;
+    z-index: 2; /* Ensure text is above all other content */
+    transition: 0.5s;
+}
+
+
+
+#overlayTextHolder {
+    margin-left: 1vw;
+}
+
+#overlayTextHolder > #overlayText {
+    position: absolute;
+    bottom: -2vw;
+}
+
+#overlayTextHolder > #topText {
+    position: absolute;
+    bottom: 15vw;
+}
+
+#topText.top-minimized {
+    font-size: 15vw;
+    bottom: 10vw !important;
+}
+
+#overlayText.overlay-minimized {
+    font-size: 15vw;
+    bottom: -2vw !important;
+}
+
+
+/*
+====================================================
+
+    Sliding Panel
+
+====================================================
+ */
+
+
+#leftPanel {
+    background: #090D1E;
+    width: 45vw; /* Updated width to 40% of viewport width */
+    height: 100vh;
+    position: fixed; /* Fixed to viewport */
+    top: 0;
+    right: -45vw; /* Start off-screen on the right */
+    transition: right 0.5s ease; /* Smooth transition */
+}
+
+/*
+====================================================
+
+    Navigation Bar
+
+====================================================
+ */
+
+
+.nav-bar {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Display as flexbox */
+    justify-content: space-around; /* Space around each item for equal spacing */
+    flex-direction: row; /* Set items in a row */
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.nav-bar li {
+    flex: 1; /* Make each list item take up equal space */
+    font-family: Montserrat;
+    font-weight: 200;
+    font-size: 17pt;
+    padding: 5px;
+}
+
+.nav-bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-bar li a:hover {
+    opacity: 0.5;
+}
+
+#specialText {
+    color: #8C7BE2;
+    font-weight: 800;
+    font-size: 30pt;
+    transform:translateY(-11px);
+}
+
+/*
+====================================================
+
+    C2A Text
+
+====================================================
+ */
+
+
+#c2aText {
+    margin-top: 100px;
+    margin-right: 5vw;
+}
+
+#c2aText > h1, #c2aText > p {
+    font-family: Montserrat;
+    text-align: right;
 
 }
 
-#headerText {
-    color: blue !important;
+#c2aText > h1 {
+    color: #F6F2E0;
+    font-weight: 700;
+    font-size: 52pt;
 }
 
-.subText {
-    border: 1px solid aquamarine;
+#c2aText > p {
+    color: #EBE5ED;
+    font-size: 27pt;
+    font-weight: 400;
+
 }
 
-#backgroundImage {
-    width: 100%;
-    height: auto;
+/*
+====================================================
+
+    Screen Re-sizing
+
+====================================================
+ */
+
+
+
+@media (max-width: 1200px) {
+    .image-container img {
+        transform: translateX(-20%);
+    }
 }
+
+@media (max-width: 800px) {
+    .image-container img {
+        transform: translateX(-40%);
+    }
+}
+
+@media (max-width: 850px) {
+    #overlayText {
+        display: none;
+    }
+
+    .headerText {
+        font-size: 40vw;
+        margin-bottom: 40px;
+    }
+
+    #textHolder {
+        padding-left: 10px;
+        bottom: 2vw !important;
+    }
+
+    #topText.top-minimized {
+        /*font-size: 40vw;*/
+        display: none;
+    }
+
+    #leftPanel {
+        width: 100vw;
+        right: -100vw;
+    }
+
+    #c2aText > h1, #c2aText > p {
+        text-align: center;
+    }
+
+    #c2aText {
+        margin-right: 0vw;
+    }
+}
+
+
+
+
