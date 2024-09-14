@@ -169,6 +169,7 @@ body {
     font-weight: 800;
     font-size: 30pt;
     transform:translateY(-14px);
+    padding-left: 3px;
 }
 
 /*
@@ -260,6 +261,6 @@ body {
     }
 }
 
-
-
-
+.unselected {
+    opacity: 0.7;
+}
