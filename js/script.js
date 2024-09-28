@@ -23,13 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Update primate image location
         let primatePhoto = document.getElementById("primatePhoto");
-        let percentageMultiplier = 35 + percentageScrolled;
+        // let percentageMultiplier = 35 + percentageScrolled;
+        let percentageMultiplier = 25 + percentageScrolled;
         let amount = 'translateX(-' + percentageMultiplier + '%)'
         primatePhoto.style.transform = amount;
 
         // Update text
         let topText = document.getElementById('topText');
         let overlayText = document.getElementById('overlayText')
+
+        document.getElementById('primatePhoto')?.classList.add('revealed');
 
         topText.classList.add('top-minimized');
         overlayText.classList.add('overlay-minimized');
