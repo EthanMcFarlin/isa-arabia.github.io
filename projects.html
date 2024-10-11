@@ -28,5 +28,138 @@
   </nav>
 </div>
 
+<div id="sketchContainer1">
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+
+<script>
+  let words = ["Video", "Photo", "Painting", "Design", "Drawing"];
+  let rows = 5;
+  let wordSize = 100;
+  let scrollSpeed = 1;
+  let wordArrays = [];
+  let offsets = [];
+  let images = {};
+  let hoveredWord = null;
+  let pausedRow = null;
+
+  let wordLinks = {
+    "VIDEO": "video.html",
+    "PHOTO": "photo.html",
+    "PAINTING": "painting.html",
+    "DESIGN": "design.html",
+    "DRAWING": "drawing.html"
+  };
+
+  function preload() {
+    for (let word of words) {
+      let upperWord = word.toUpperCase();
+      images[upperWord] = loadImage(`img/${word.toLowerCase()}.png`);
+    }
+  }
+
+  function setup() {
+    let canvas = createCanvas(windowWidth, windowHeight * 0.85);
+    canvas.parent('sketchContainer1');
+    textFont('Montserrat');
+    textSize(wordSize);
+    textStyle(BOLD);
+
+    for (let i = 0; i < rows; i++) {
+      wordArrays[i] = [];
+      offsets[i] = 0;
+
+      let shuffledWords = shuffle([...words]);
+      let totalLength = 0;
+
+      while (totalLength < windowWidth * 2) {
+        for (let word of shuffledWords) {
+          let upperWord = word.toUpperCase();
+          totalLength += textWidth(upperWord) + 20;
+
+          if (totalLength >= windowWidth * 2) {
+            break;
+          }
+
+          let rowStartColor = (i % 2 === 0) ? "#fff" : "#8B7BE1";
+          let alternateColor = (i % 2 === 0) ? "#8B7BE1" : "#fff";
+
+          let color = (wordArrays[i].length % 2 === 0) ? rowStartColor : alternateColor;
+          wordArrays[i].push({ word: upperWord, color: color });
+        }
+
+        shuffledWords = shuffle([...words]);
+      }
+    }
+  }
+
+  function draw() {
+    background('#090E1E');
+    let cursorOverText = false;
+
+    for (let i = 0; i < rows; i++) {
+      let xOffset = offsets[i];
+      let yOffset = wordSize * (i + 1) * 1.2;
+
+      for (let j = 0; j < wordArrays[i].length; j++) {
+        let wordObj = wordArrays[i][j];
+        let wordWidth = textWidth(wordObj.word);
+        let textColor = wordObj.color;
+
+        if (mouseX > xOffset && mouseX < xOffset + wordWidth && mouseY > yOffset - wordSize && mouseY < yOffset) {
+          fill(color(textColor).levels[0], color(textColor).levels[1], color(textColor).levels[2], 204);
+          cursorOverText = true;
+          hoveredWord = wordObj.word;
+          pausedRow = i;
+        } else {
+          fill(textColor);
+        }
+
+        text(wordObj.word, xOffset, yOffset);
+
+        xOffset += wordWidth + 20;
+      }
+
+      if (pausedRow !== i) {
+        offsets[i] -= scrollSpeed;
+      }
+
+      if (offsets[i] <= -textWidth(wordArrays[i][0].word) - 20) {
+        offsets[i] += textWidth(wordArrays[i][0].word) + 20;
+        wordArrays[i].push(wordArrays[i].shift());
+      }
+    }
+
+    // Draw image near cursor
+    if (cursorOverText && hoveredWord) {
+      cursor('pointer');
+      let img = images[hoveredWord];
+      if (img) {
+        let maxImgSize = 350; // Adjust image size to be slightly smaller
+        let aspectRatio = img.width / img.height;
+        let displayWidth = aspectRatio >= 1 ? maxImgSize : maxImgSize * aspectRatio;
+        let displayHeight = aspectRatio >= 1 ? maxImgSize / aspectRatio : maxImgSize;
+        image(img, mouseX + 15, mouseY + 30, displayWidth, displayHeight); // Adjusted image size and position
+      }
+    } else {
+      cursor('default');
+      hoveredWord = null;
+      pausedRow = null;
+    }
+  }
+
+  function mousePressed() {
+    if (hoveredWord) {
+      window.location.href = wordLinks[hoveredWord];
+    }
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight * 0.85);
+  }
+</script>
+
 </body>
 </html>

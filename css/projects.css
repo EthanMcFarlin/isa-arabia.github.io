@@ -1,11 +1,15 @@
 #projectsBody {
     background: #090E1E;
+    /* Ensuring body takes full height to allow scrolling */
+    min-height: 100vh;
+    margin: 0;
 }
 
 #fakeContainer {
     width: 48vw;
     position: absolute;
     right: 0;
+    top: 0;
 }
 
 .selected {
@@ -17,4 +21,29 @@
 
 .selected:hover {
     opacity: 1 !important;
+}
+
+#sketchContainer1 {
+    width: 100%;
+    height: 85vh;
+    /*background: red;*/
+    margin-top: 15vh;
+}
+
+#sketchContainer2 {
+    width: 90%;
+    height: auto; /* Allow to dynamically change */
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: visible; /* This ensures that overflowing elements aren't cut off */
+}
+
+body {
+    overflow: visible !important;
+}
+
+img {
+    pointer-events: none;
 }

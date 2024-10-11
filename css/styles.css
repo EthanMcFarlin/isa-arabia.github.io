@@ -175,7 +175,7 @@ body {
 }
 
 .nav-bar li a:hover {
-    opacity: 0.5;
+    opacity: 1;
 }
 
 #specialText {
@@ -201,7 +201,7 @@ body {
     justify-content: flex-end; /* Right align horizontally */
     /*align-items: center; !* Center vertically (optional) *!*/
     flex-direction: column; /* Ensure elements are stacked vertically */
-    margin-top: 20px;
+    margin-top: 40px;
     margin-right: 8vw;
     margin-left: 5vw;
 }
@@ -213,6 +213,12 @@ body {
     overflow: hidden;
     object-fit: cover;
     margin: 0 0 0 auto; /* Right-align image */
+    transition: 0.2s;
+}
+
+#portrait:hover {
+    /*transform:scale(0.98);*/
+    transform: scale(0.98) rotateZ(2deg) rotateX(2deg);
 }
 
 #c2aText > h1, #c2aText > p {
