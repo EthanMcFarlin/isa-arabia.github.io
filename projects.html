@@ -37,7 +37,7 @@
 <script>
   let words = ["Video", "Photo", "Painting", "Design", "Drawing"];
   let rows = 5;
-  let wordSize = 100;
+  let wordSize = 120;
   let scrollSpeed = 1;
   let wordArrays = [];
   let offsets = [];
@@ -141,7 +141,7 @@
         let aspectRatio = img.width / img.height;
         let displayWidth = aspectRatio >= 1 ? maxImgSize : maxImgSize * aspectRatio;
         let displayHeight = aspectRatio >= 1 ? maxImgSize / aspectRatio : maxImgSize;
-        image(img, mouseX + 15, mouseY + 30, displayWidth, displayHeight); // Adjusted image size and position
+        image(img, mouseX + -15, mouseY + -15, displayWidth, displayHeight); // Adjusted image size and position
       }
     } else {
       cursor('default');

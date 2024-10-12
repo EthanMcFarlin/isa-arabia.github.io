@@ -45,7 +45,7 @@
     margin-right: auto;
     position: relative;
     overflow: visible; /* This ensures that overflowing elements aren't cut off */
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 body {
@@ -105,20 +105,46 @@ img {
 }
 
 .projectIntroducer {
-    text-align: center;
-    margin-top: 17vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    width: calc(90% - 25px); /* Match #sketchContainer2's width including margin */
+    margin-left: auto; /* Center the element */
+    margin-right: auto; /* Center the element */
+    /* Optional: Ensure it only takes space if necessary */
+    max-width: 100%;
+    box-sizing: border-box; /* Include padding, border in the element's total width and height */
+    /*margin-bottom: 50px;*/
 
 }
 
 .projectIntroducer > h1 {
-    font-size: 6vw;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-weight: 800;
     color: #fff;
     mix-blend-mode: difference;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
+    margin-top: 18vw;
+    margin-left: -5vw; /* Adjust to align centrally within .projectIntroducer */
 
 }
+
+.imageContainer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    flex: 1 1 0; /* Allow flex properties to govern growth/shrink */
+    /* Use aspect ratio to keep it square */
+    aspect-ratio: 1 / 1;
+    width: 40vw; /* Can be adjusted or managed by flex */
+    height: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 
 #popupOverlay {
     display: none;
@@ -134,20 +160,22 @@ img {
 }
 
 .popup {
-    max-width: 90vw; /* Slightly wider than the image */
-    max-height: 90vh;
     background: white;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    /*padding: 10px; !* Optional: add a bit of padding *!*/
+    box-sizing: border-box;
 }
 
 .popup img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: auto;
+    height: auto;
+    max-width: 90vw; /* Maximum width relative to viewport */
+    max-height: 90vh; /* Maximum height relative to viewport */
+    object-fit: contain; /* Ensures the image fully fits within the boundaries */
 }
 
 .close-button {

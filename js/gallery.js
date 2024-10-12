@@ -2,7 +2,7 @@ let columns;
 let images = [];
 
 let columnHeights = [0, 0, 0];
-const margin = 20; // Margin in pixels for both horizontal and vertical spacing
+const margin = 25; // Margin in pixels for both horizontal and vertical spacing
 let imgWidth;
 let popupOpen = false; // To track if the popup is open
 
