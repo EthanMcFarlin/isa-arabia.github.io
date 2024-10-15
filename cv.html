@@ -23,15 +23,31 @@
       overflow-x: hidden !important;
     }
 
-    #cvContainer {
+    .cvContainer {
       margin: 0 auto;
       text-align: center;
-      width: 80vw;
       margin-top: 16vh;
-      margin-bottom: 8vh;
-
-
+      margin-bottom: 16vh;
     }
+
+    .cvLight {
+      color: #fff;
+      width: 80vw;
+    }
+
+    .cvDark {
+      color: #090D1E;
+      background: #fff;
+      width: 100vw;
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+
+    .cvDark > div > div .cv-header {
+      mix-blend-mode: normal !important;
+      color: #242424;
+    }
+
 
     .cv-header-container {
       display: flex;
@@ -44,7 +60,7 @@
       display: inline-block;
       margin-left: 10px;
       font-size: 40pt;
-      color: #fff;
+
       font-family: Montserrat, sans-serif;
       font-weight: 800;
       mix-blend-mode: difference;
@@ -63,8 +79,7 @@
       transform: translateY(0px);
     }
 
-    .cv-ul, .cv-li {
-      color: #fff;
+    .cv-info-group, .cv-li {
       text-align: left;
       font-family: Montserrat;
       margin-top: 10px;
@@ -72,25 +87,32 @@
     }
 
     .cv-li {
-      margin-left: 40px;
+      margin-left: 0px;
       font-size: 12pt;
     }
 
-    .cv-ul {
+    .cv-info-group {
       font-size: 14pt;
     }
 
-    .cvContainer2 {
-      background: #fff;
-      width: 100vw;
-      height: 500px;
-      text-align: center;
-    }
+
     .edu-logo {
       width: 80px;
       height: auto;
       margin-right: 10px;
     }
+
+    .time-header {
+      /*padding-left: 90px;*/
+      font-size: 12pt;
+
+    }
+
+    .cv-info-group {
+      margin-bottom: 30px;
+    }
+
+
   </style>
 
 </head>
@@ -148,43 +170,121 @@
 <!--  </div>-->
 <!--</div>-->
 
-<div class="container" id="cvContainer">
-  <div class="row">
+<div class="cvContainer cvLight">
+  <div class="container">
+    <div class="row">
+      <div class="cv-header-container">
+        <h1 class="cv-header">Education</h1>
+        <i class="fa-solid fa-graduation-cap cv-square"></i>
+      </div>
+
+      <div class="col">
+        <ul class="cv-ul">
+          <a target="_blank" href="https://www.tufts.edu/"><img src="img/logos/tufts.png" class="edu-logo"></a>
+          <b>B.A. in Biopsychology</b> (2021 - Present)
+          <li class="cv-li"><b>GPA:</b> 3.98/4.0</li>
+          <li class="cv-li"><b>Activities:</b> Vice President of Public Harmony (2021-2024),
+            Encendido Latin Dance Troupe (2022-2024),
+            Resident Assistant (2022-2024),
+            Senior Graphics Fellow at Hillel (2023-2024),
+            Event Technician at Cohen Auditorium (2022-2024),
+            Association of Latin American Students (2021-2024)
+
+          </li>
+          <li class="cv-li"><b>Notable Coursework:</b> Tropical Ecology and Conservation,
+            Chimpanzee Behavioral Ecology,
+            Independent Research in Biology, Primate Social Behavior, Experimental Psychology,
+            Statistics for Behavioral Science, Perception, Brain and Behavior, Comparative
+            Vertebrate Physiology, Animal Behavior, General Genetics, Cells and Organisms</li>
+
+          <li class="cv-li"><b>Awards:</b>
+            Dean's List (x6),
+            1st Place Undergraduate Environmental Photography Contest
+            Undergraduate Research Fund (x2),
+            Student Organization of the Yar
+          </li>
+
+
+        </ul>
+
+      </div>
+
+      <div class="col">
+
+        <ul class="cv-ul">
+          <a target="_blank" href="https://smfa.tufts.edu/"><img src="img/logos/smfa.png" class="edu-logo"></a>
+          <b>B.F.A. in Studio Art</b> (2021 - Present)
+          <li class="cv-li"><b>Notable Coursework:</b>
+            How the Brain Perceives Art,
+            Directed Study,
+            Art and Ecology,
+            Cultivating Ecologies: Art and the Environment,
+            Flora and Fauna,
+            Interdisciplinary Practices</li>
+
+        </ul>
+
+        <ul class="cv-ul">
+          <a href="https://www.pinecrest.edu/" target="_blank"><img src="img/logos/pinecrest.png" class="edu-logo" style="width: 120px !important"></a>
+          <b>High School Diploma</b> (2017 - 2021)
+          <li class="cv-li"><b>Awards:</b>
+            Founder's Council Award for Excellence in Visual Arts,
+            English and Science Honor Societies, National Beta Club,
+            Varsity Rowing (x5)
+
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cvContainer cvDark">
+  <div class="container">
+    <div class="row">
     <div class="cv-header-container">
-      <h1 class="cv-header">Education</h1>
-      <i class="fa-solid fa-graduation-cap cv-square"></i>
+      <h1 class="cv-header">Research</h1>
+      <i class="fa-solid fa-microscope cv-square"></i>
     </div>
 
     <div class="col">
-      <ul class="cv-ul">
-        <a target="_blank" href="https://www.tufts.edu/"><img src="img/logos/tufts.png" class="edu-logo"></a>
-        <b>B.A. in Biopsychology</b> (2021 - Present)
-        <li class="cv-li"><b>GPA:</b> 3.98/4.0</li>
-        <li class="cv-li"><b>Activities:</b> Vice President of Public Harmony (2021-2024),
-          Encendido Latin Dance Troupe (2022-2024),
-          Resident Assistant (2022-2024),
-          Senior Graphics Fellow at Hillel (2023-2024),
-          Event Technician at Cohen Auditorium (2022-2024),
-          Association of Latin American Students (2021-2024)
 
+      <div class="cv-info-group">
+        <div class="row">
+          <div class="col-sm-auto">
+            <a target="_blank" href="https://www.bu.edu/"><img src="img/logos/bu.png" class="edu-logo"></a>
+          </div>
+          <div class="col">
+            <span class="time-header">May 2024 - Present</span><br>
+            <b>Traniello Lab Research Assistant, Boston University</b>
+          </div>
+        </div>
+      </div>
+
+      <ul class="cv-ul">
+
+        <li class="cv-li">
+          Engaged in extensive background research to review relevant scientific literature
         </li>
         <li class="cv-li"><b>Notable Coursework:</b> Tropical Ecology and Conservation,
-        Chimpanzee Behavioral Ecology,
-        Independent Research in Biology, Primate Social Behavior, Experimental Psychology,
-        Statistics for Behavioral Science, Perception, Brain and Behavior, Comparative
-        Vertebrate Physiology, Animal Behavior, General Genetics, Cells and Organisms</li>
+          Chimpanzee Behavioral Ecology,
+          Independent Research in Biology, Primate Social Behavior, Experimental Psychology,
+          Statistics for Behavioral Science, Perception, Brain and Behavior, Comparative
+          Vertebrate Physiology, Animal Behavior, General Genetics, Cells and Organisms</li>
 
         <li class="cv-li"><b>Awards:</b>
           Dean's List (x6),
           1st Place Undergraduate Environmental Photography Contest
           Undergraduate Research Fund (x2),
-        Student Organization of the Yar
+          Student Organization of the Yar
         </li>
 
 
       </ul>
 
-      </div>
+    </div>
 
     <div class="col">
 
@@ -192,7 +292,7 @@
         <a target="_blank" href="https://smfa.tufts.edu/"><img src="img/logos/smfa.png" class="edu-logo"></a>
         <b>B.F.A. in Studio Art</b> (2021 - Present)
         <li class="cv-li"><b>Notable Coursework:</b>
-         How the Brain Perceives Art,
+          How the Brain Perceives Art,
           Directed Study,
           Art and Ecology,
           Cultivating Ecologies: Art and the Environment,
@@ -215,10 +315,7 @@
 
     </div>
   </div>
-</div>
-
-<div class="cvContainer2">
-
+  </div>
 </div>
 
 
